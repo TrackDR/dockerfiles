@@ -1,4 +1,4 @@
-#cudadocker75
+#cudadocker7.5
 
 Install docker:
 
