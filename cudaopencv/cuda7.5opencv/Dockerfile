@@ -40,16 +40,30 @@ RUN sudo apt-get update -qq && sudo apt-get install -y --force-yes \
     python-dev \
     python3-dev \
     python-numpy \
+    python3-numpy \
     python-pip \
     python3-pip \
     libmp3lame-dev \
     x264 \
     libeigen3-dev \
-    unzip; \
-    
+    unzip;
+
 # RUN sudo apt-get clean
 
-RUN sudo pip3 install numpy
+# RUN sudo pip3 install numpy
+
+# RUN mkdir /usr/local/src
+
+# Build CMake 3.3.2 to autodetect Python 3.4 and higher for OpenCV Build
+# =================================
+WORKDIR /usr/local/src
+RUN wget https://cmake.org/files/v3.3/cmake-3.3.2.tar.gz
+RUN tar zxvpf cmake-3.3.2.tar.gz
+WORKDIR /usr/local/src/cmake-3.3.2
+RUN ./configure
+RUN make -j6
+RUN make install
+ENV CMAKE_ROOT=/usr/local/share/cmake-3.3
 
 # Build OpenCV 3.x
 # =================================
@@ -71,10 +85,11 @@ RUN cmake -D CMAKE_BUILD_TYPE=RELEASE \
           -D INSTALL_PYTHON_EXAMPLES=ON \
           -D BUILD_EXAMPLES=ON \
           -D INSTALL_TESTS=ON \
-          -D WITH_NVCUVID=ON \
+          -D WITH_NVCUVID=OlN \
+          -D WITH_IPP=OFF \
           -D OPENCV_EXTRA_MODULES_PATH=/usr/local/src/opencv_contrib/modules \
           /usr/local/src/opencv
-RUN make
+RUN make -j6
 RUN sudo make install
 RUN sudo sh -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
 RUN sudo ldconfig
