@@ -12,7 +12,7 @@ sudo docker pull trackdr/cuda7.5opencv; cd /usr/local/cuda/samples/1_Utilities/d
 
 OR Build docker instance and run docker instance:
 
-git clone https://github.com/TrackDR/caffegpudockercuda75; sudo docker build caffegpudockercuda75; cd /usr/local/cuda/samples/1_Utilities/deviceQuery; make; /home/ubuntu/NVIDIA_CUDA-7.5_Samples/bin/x86_64/linux/release/deviceQuery; DOCKER_NVIDIA_DEVICES="--device /dev/nvidia0:/dev/nvidia0 --device /dev/nvidiactl:/dev/nvidiactl --device /dev/nvidia-uvm:/dev/nvidia-uvm"; sudo docker run -ti $DOCKER_NVIDIA_DEVICES caffegpudockercuda75 /bin/bash; sudo docker ps
+git clone https://github.com/TrackDR/dockerfiles/cudaopencv/cuda7.5opencv; sudo docker build cuda7.5opencv; cd /usr/local/cuda/samples/1_Utilities/deviceQuery; make; /home/ubuntu/NVIDIA_CUDA-7.5_Samples/bin/x86_64/linux/release/deviceQuery; DOCKER_NVIDIA_DEVICES="--device /dev/nvidia0:/dev/nvidia0 --device /dev/nvidiactl:/dev/nvidiactl --device /dev/nvidia-uvm:/dev/nvidia-uvm"; sudo docker run -ti $DOCKER_NVIDIA_DEVICES caffegpudockercuda75 /bin/bash; sudo docker ps
 
 Download samples for cuda:
 
