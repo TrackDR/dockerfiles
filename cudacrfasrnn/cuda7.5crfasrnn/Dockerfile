@@ -1,5 +1,5 @@
 # Start with CUDA base image
-FROM trackdr/cudadocker75a
+FROM trackdr/cudadocker/cudadocker7.5
 MAINTAINER me
 
 # Install git, bc and dependencies
