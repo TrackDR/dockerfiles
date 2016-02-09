@@ -1,6 +1,6 @@
-# caffegpudockercuda75
+# cuda7.5caffeopencv
 
-Docker to do caffe, cuda, python
+Docker to do caffe, cuda, python, opencv
 
 Install docker:
 
