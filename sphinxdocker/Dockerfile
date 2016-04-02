@@ -29,5 +29,5 @@ RUN echo "It's a dense crowd in two distinct ways. The fruit of a figg tree is a
 RUN java -cp /usr/local/src/sphinx4/sphinx4-core/target/sphinx4-core-1.0-SNAPSHOT.jar edu.cmu.sphinx.tools.aligner.Aligner cmusphinx-en-us-5.2/ sphinx4-5prealpha-src/sphinx4-data/src/main/resources/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict sample.wav "$(cat sample.txt)"
 
 RUN wget http://downloads.sourceforge.net/project/opencsv/opencsv/3.7/opencsv-3.7.jar
-RUN javac -cp /usr/local/src/sphinx4/sphinx4-core/target/sphinx4-core-1.0-SNAPSHOT.jar:opencsv-3.3.jar Aligner.java 
+RUN javac -cp /usr/local/src/sphinx4/sphinx4-core/target/sphinx4-core-1.0-SNAPSHOT.jar:opencsv-3.7.jar Aligner.java 
 
