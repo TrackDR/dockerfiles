@@ -31,7 +31,7 @@ RUN sox sample_original.wav -b 16 sample.wav channels 1 rate 16k
 RUN echo "It's a dense crowd in two distinct ways. The fruit of a figg tree is apple shaped." > sample.txt
 RUN wget -O en_us_nostress.tar.gz http://sourceforge.net/projects/cmusphinx/files/G2P%20Models/en_us_nostress.tar.gz/download
 #RUN java -cp /usr/local/src/sphinx4/sphinx4-core/build/sphinx4-core-5prealpha-SNAPSHOT.jar edu.cmu.sphinx.demo.aligner.AlignerDemo cmusphinx-en-us-5.2/ sphinx4-5prealpha-src/sphinx4-data/src/main/resources/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict sample.wav sample.txt
-RUN java -cp /usr/local/src/sphinx4/sphinx4-core/build/sphinx4-core-5prealpha-SNAPSHOT.jar edu.cmu.sphinx.demo.aligner.AlignerDemo sample.wav sample.txt en-us-generic /usr/local/src/sphinx4/sphinx4-data/src/main/resources/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict  /home/ubuntu/en_us_nostress/model.fst.ser
+RUN java -cp /usr/local/src/sphinx4/sphinx4-core/build/libs/sphinx4-core-5prealpha-SNAPSHOT.jar edu.cmu.sphinx.demo.aligner.AlignerDemo sample.wav sample.txt en-us-generic /usr/local/src/sphinx4/sphinx4-data/src/main/resources/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict  /home/ubuntu/en_us_nostress/model.fst.ser
 
 
 RUN wget http://downloads.sourceforge.net/project/opencsv/opencsv/3.7/opencsv-3.7.jar
