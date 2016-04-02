@@ -13,6 +13,8 @@ RUN sudo apt-get update -qq && sudo apt-get install -y --force-yes \
 WORKDIR /usr/local/src
 RUN git clone https://github.com/cmusphinx/sphinx4
 WORKDIR /usr/local/src/sphinx4/sphinx4-core
+#RUN git revert aa4e1838f06eb032fd248601469b16ac95aeb08a
+#RUN mvn clean install
 RUN gradle build
 
 # https://github.com/JoshData/cmusphinx-alignment-example
